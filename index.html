@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <!-- Linking Google Font Link For Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="souitroToDoLogo.png" alt="logo" />
+        <h2>CodeAlpha To-Do</h2>
+      </div>
+      <ul class="sidebar-links">
+        <h4>
+          <span>Dashboard</span>
+          <div class="menu-separator"></div>
+        </h4>
+        <li>
+          <a href="index.html">
+            <span class="material-symbols-outlined"> dashboard </span
+            >Add Tasks</a
+          >
+        </li>
+        <li>
+          <a href="todaysTask.html"
+            ><span class="material-symbols-outlined"> move_up </span>Todays Tasks</a
+          >
+        </li>
+        <li>
+          <a href="completedTask.html"
+            ><span class="material-symbols-outlined"> monitoring </span
+            >Completed Tasks</a
+          >
+        </li>
+        <li>
+          <a href="historyTasks.html"
+            ><span class="material-symbols-outlined"> overview </span
+            >Tasks History</a
+          >
+        </li>
+        <li>
+          <a href="settings.html"
+            ><span class="material-symbols-outlined"> settings </span
+            >Settings</a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><span class="material-symbols-outlined"> logout </span>Logout</a
+          >
+        </li>
+      </ul>
+      <div class="user-account" id="user-account">
+        <div class="user-profile">
+          <img src="logo.png" alt="Profile Image" />
+          <div class="user-detail">
+            <h3>Veekay Souitro</h3>
+            <span>Manage Time ToDo</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+	<div class="container">
+	<form id="add-task-form" style="margin-left:34%">
+	
+	<h1>Add Tasks Here</h1>
+	
+        <label for="task-name">Task Name:</label>
+        <input type="text" id="task-name" name="task-name" placeholder="Enter task name..." required><br>
+		
+        <label for="task-date">Task Date:</label>
+        <input type="date" id="task-date" name="task-date" required><br>
+		
+        <label for="task-time">Task Time:</label>
+        <input type="time" id="task-time" name="task-time" required><br>
+		
+        <label for="task-priority">Task Priority:</label>
+        <select id="task-priority" name="task-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select  required><br>
+		
+        <label for="task-category"><b>Task Category:</b></label>
+		<fieldset class="school-fieldset">
+        <label for="school" class="school">School</label>
+        <input type="radio" id="school" name="task-category" value="school" class="school" checked>
+		</fieldset>
+		
+		<fieldset class="work-fieldset">
+        <label for="work" class="work">Work</label>
+        <input type="radio" id="work" name="task-category" value="work" class="work">
+		</fieldset>
+		
+		<fieldset class="personal-fieldset">
+        <label for="personal" class="personal">Personal</label>
+        <input type="radio" id="personal" name="task-category" value="personal" class="personal">
+		</fieldset>
+		
+        <button type="submit" name="submit" id="myButton">Add Task</button>
+		<button type="reset"  name="refresh">Refresh</button>
+		
+		<!-- <script>
+		import { debounce } from 'lodash';
+
+		const button = document.getElementById('myButton');
+
+		button.addEventListener('click', debounce(() => {
+		  // Your code here
+		}, 1000));
+		</script> -->
+		
+    </form>
+
+<fieldset>
+    <h1><u>
+	<b>Find Added Tasks Here</b>
+	</u></h1>
+	<p style="margin-bottom:20px; color:white;"><b style="color:black; font-size:1.5rem;">Note: </b>
+	
+	<!-- indication of priorities-->
+	<b><img src="low-priority.png" alt="Profile Image" /> Low Priority  
+	<img src="medium-priority.png" alt="Profile Image" /> Medium Priority
+	<img src="high-priority.png" alt="Profile Image" /> High Priority</b>
+	
+	<!-- indication of categories -->
+	<b> || <img src="school.png" alt="Profile Image" /> School 
+	<img src="work.png" alt="Profile Image" /> Work
+	<img src="Personal.png" alt="Profile Image" /> Personal</b>
+	</p>
+	<!-- This is where the tasks will be rendered -->
+    <ul id='tasks'></ul>
+</fieldset>
+
+    <script src="script.js"></script>
+	
+	</div>
+  </body>
+</html>
